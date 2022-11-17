@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!--                                    Activates the annotation used in JAVA side                                             -->
+	<context:annotation-config />
+
+	<!--                                    DEFINING THE PATH OF .properties file                         -->
+	<context:property-placeholder location="classpath:beans_required_value_annotation.properties" />
+
+
+	<!-- NO USE OF @VALUE ANNOTATION    
+	<bean id="student" class="spring.required_value_annotation.Student">
+		<property name="name" value="${student.name}"></property>
+		<property name="interestedCourse" value="${student.interestedCourse}"></property>
+		<property name="hobby" value="${student.hobby}"></property>
+	</bean>
+  -->
+
+	<!--                         USE OF @VALUE ANNOTATION  AT JAVA SIDE IN STUDENT_CLASS                                            -->
+	<bean id="student" class="spring.required_value_annotation.Student"></bean>
+</beans>

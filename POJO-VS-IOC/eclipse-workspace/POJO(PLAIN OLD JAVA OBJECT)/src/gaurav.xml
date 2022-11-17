@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="addr" class="pojo.object.Address">
+ <property name="city" value="KATHMANDU" />
+ <property name="state" value="BAGMATI" />
+ <property name="zipcode" value="42152" />
+ </bean>
+ <bean id="emp1" class="pojo.object.Employee" init-method="init" destroy-method="destroy">
+ <property name="ename" value="Gaurav" />
+ <property name="eid" value="200" />
+ <!--Constructor injection -->
+ <!-- <constructor-arg ref="addr"/> -->
+  <property name="address" ref="addr" />
+ 
+ </bean>
+ <!-- <bean id="emp2" class="pojo.object.Employee">
+ <property name="ename" value="Saurav" />
+ <property name="eid" value="200" />
+ <property name="Salary" value="10000" />
+ </bean> -->
+</beans>
